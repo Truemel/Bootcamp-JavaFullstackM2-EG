@@ -96,3 +96,10 @@ nav {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
+
+td {
+    border-width: 5px;
+    border-color: red;
+    border-style: inset;
+    border-radius: 10px;
+}
