@@ -7,6 +7,16 @@ $(document).ready(function(){
         $("tr.tar").append("<td>"+datos[i]+Math.random()*1000+"</td>");
 */
 
+$.ajax({
+    method: "GET",
+    url: "https://catfact.ninja/breeds?limit=10",
+    headers: { accept: "application/json", "X-CSRF-TOKEN": "JBIsMNMcb8IMaLX9ejw2029yUrxG559Ouu4gb2qw" }
+}).done(function (data){
+    var datos = data.data;
+    $("table").DataTable({data: datos, columns: [{data: "breed"}, {data: "country"}, {data: "origin"}, {data: "coat"}, {data: "pattern"}]});
+});
+
+/*
 let datos = [
     [
         'Subaru',
@@ -81,6 +91,8 @@ let datos = [
 
 ];
 $("table").DataTable({data: datos});
+*/
 
 //$("table").DataTable();
+
 });
